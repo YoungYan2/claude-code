@@ -2,6 +2,12 @@
 
 > This repository mirrors a **publicly exposed Claude Code source snapshot** that became accessible on **March 31, 2026** through a source map exposure in the npm distribution. It is maintained for **educational, defensive security research, and software supply-chain analysis**.
 
+## Getting Started
+
+If you are new to this repository, start with the build and run onboarding guide:
+
+- [docs/build-and-run.md](docs/build-and-run.md)
+
 ---
 
 ## Research Context
@@ -102,75 +108,75 @@ src/
 
 Every tool Claude Code can invoke is implemented as a self-contained module. Each tool defines its input schema, permission model, and execution logic.
 
-| Tool | Description |
-|---|---|
-| `BashTool` | Shell command execution |
-| `FileReadTool` | File reading (images, PDFs, notebooks) |
-| `FileWriteTool` | File creation / overwrite |
-| `FileEditTool` | Partial file modification (string replacement) |
-| `GlobTool` | File pattern matching search |
-| `GrepTool` | ripgrep-based content search |
-| `WebFetchTool` | Fetch URL content |
-| `WebSearchTool` | Web search |
-| `AgentTool` | Sub-agent spawning |
-| `SkillTool` | Skill execution |
-| `MCPTool` | MCP server tool invocation |
-| `LSPTool` | Language Server Protocol integration |
-| `NotebookEditTool` | Jupyter notebook editing |
-| `TaskCreateTool` / `TaskUpdateTool` | Task creation and management |
-| `SendMessageTool` | Inter-agent messaging |
-| `TeamCreateTool` / `TeamDeleteTool` | Team agent management |
-| `EnterPlanModeTool` / `ExitPlanModeTool` | Plan mode toggle |
-| `EnterWorktreeTool` / `ExitWorktreeTool` | Git worktree isolation |
-| `ToolSearchTool` | Deferred tool discovery |
-| `CronCreateTool` | Scheduled trigger creation |
-| `RemoteTriggerTool` | Remote trigger |
-| `SleepTool` | Proactive mode wait |
-| `SyntheticOutputTool` | Structured output generation |
+| Tool                                     | Description                                    |
+| ---------------------------------------- | ---------------------------------------------- |
+| `BashTool`                               | Shell command execution                        |
+| `FileReadTool`                           | File reading (images, PDFs, notebooks)         |
+| `FileWriteTool`                          | File creation / overwrite                      |
+| `FileEditTool`                           | Partial file modification (string replacement) |
+| `GlobTool`                               | File pattern matching search                   |
+| `GrepTool`                               | ripgrep-based content search                   |
+| `WebFetchTool`                           | Fetch URL content                              |
+| `WebSearchTool`                          | Web search                                     |
+| `AgentTool`                              | Sub-agent spawning                             |
+| `SkillTool`                              | Skill execution                                |
+| `MCPTool`                                | MCP server tool invocation                     |
+| `LSPTool`                                | Language Server Protocol integration           |
+| `NotebookEditTool`                       | Jupyter notebook editing                       |
+| `TaskCreateTool` / `TaskUpdateTool`      | Task creation and management                   |
+| `SendMessageTool`                        | Inter-agent messaging                          |
+| `TeamCreateTool` / `TeamDeleteTool`      | Team agent management                          |
+| `EnterPlanModeTool` / `ExitPlanModeTool` | Plan mode toggle                               |
+| `EnterWorktreeTool` / `ExitWorktreeTool` | Git worktree isolation                         |
+| `ToolSearchTool`                         | Deferred tool discovery                        |
+| `CronCreateTool`                         | Scheduled trigger creation                     |
+| `RemoteTriggerTool`                      | Remote trigger                                 |
+| `SleepTool`                              | Proactive mode wait                            |
+| `SyntheticOutputTool`                    | Structured output generation                   |
 
 ### 2. Command System (`src/commands/`)
 
 User-facing slash commands invoked with `/` prefix.
 
-| Command | Description |
-|---|---|
-| `/commit` | Create a git commit |
-| `/review` | Code review |
-| `/compact` | Context compression |
-| `/mcp` | MCP server management |
-| `/config` | Settings management |
-| `/doctor` | Environment diagnostics |
-| `/login` / `/logout` | Authentication |
-| `/memory` | Persistent memory management |
-| `/skills` | Skill management |
-| `/tasks` | Task management |
-| `/vim` | Vim mode toggle |
-| `/diff` | View changes |
-| `/cost` | Check usage cost |
-| `/theme` | Change theme |
-| `/context` | Context visualization |
-| `/pr_comments` | View PR comments |
-| `/resume` | Restore previous session |
-| `/share` | Share session |
-| `/desktop` | Desktop app handoff |
-| `/mobile` | Mobile app handoff |
+| Command              | Description                  |
+| -------------------- | ---------------------------- |
+| `/commit`            | Create a git commit          |
+| `/review`            | Code review                  |
+| `/compact`           | Context compression          |
+| `/mcp`               | MCP server management        |
+| `/config`            | Settings management          |
+| `/doctor`            | Environment diagnostics      |
+| `/login` / `/logout` | Authentication               |
+| `/memory`            | Persistent memory management |
+| `/skills`            | Skill management             |
+| `/tasks`             | Task management              |
+| `/vim`               | Vim mode toggle              |
+| `/diff`              | View changes                 |
+| `/cost`              | Check usage cost             |
+| `/theme`             | Change theme                 |
+| `/context`           | Context visualization        |
+| `/pr_comments`       | View PR comments             |
+| `/resume`            | Restore previous session     |
+| `/share`             | Share session                |
+| `/desktop`           | Desktop app handoff          |
+| `/mobile`            | Mobile app handoff           |
 
 ### 3. Service Layer (`src/services/`)
 
-| Service | Description |
-|---|---|
-| `api/` | Anthropic API client, file API, bootstrap |
-| `mcp/` | Model Context Protocol server connection and management |
-| `oauth/` | OAuth 2.0 authentication flow |
-| `lsp/` | Language Server Protocol manager |
-| `analytics/` | GrowthBook-based feature flags and analytics |
-| `plugins/` | Plugin loader |
-| `compact/` | Conversation context compression |
-| `policyLimits/` | Organization policy limits |
-| `remoteManagedSettings/` | Remote managed settings |
-| `extractMemories/` | Automatic memory extraction |
-| `tokenEstimation.ts` | Token count estimation |
-| `teamMemorySync/` | Team memory synchronization |
+| Service                  | Description                                             |
+| ------------------------ | ------------------------------------------------------- |
+| `api/`                   | Anthropic API client, file API, bootstrap               |
+| `mcp/`                   | Model Context Protocol server connection and management |
+| `oauth/`                 | OAuth 2.0 authentication flow                           |
+| `lsp/`                   | Language Server Protocol manager                        |
+| `analytics/`             | GrowthBook-based feature flags and analytics            |
+| `plugins/`               | Plugin loader                                           |
+| `compact/`               | Conversation context compression                        |
+| `policyLimits/`          | Organization policy limits                              |
+| `remoteManagedSettings/` | Remote managed settings                                 |
+| `extractMemories/`       | Automatic memory extraction                             |
+| `tokenEstimation.ts`     | Token count estimation                                  |
+| `teamMemorySync/`        | Team memory synchronization                             |
 
 ### 4. Bridge System (`src/bridge/`)
 
@@ -226,19 +232,19 @@ Commander.js-based CLI parser and React/Ink renderer initialization. At startup,
 
 ## Tech Stack
 
-| Category | Technology |
-|---|---|
-| Runtime | [Bun](https://bun.sh) |
-| Language | TypeScript (strict) |
-| Terminal UI | [React](https://react.dev) + [Ink](https://github.com/vadimdemedes/ink) |
-| CLI Parsing | [Commander.js](https://github.com/tj/commander.js) (extra-typings) |
-| Schema Validation | [Zod v4](https://zod.dev) |
-| Code Search | [ripgrep](https://github.com/BurntSushi/ripgrep) |
-| Protocols | [MCP SDK](https://modelcontextprotocol.io), LSP |
-| API | [Anthropic SDK](https://docs.anthropic.com) |
-| Telemetry | OpenTelemetry + gRPC |
-| Feature Flags | GrowthBook |
-| Auth | OAuth 2.0, JWT, macOS Keychain |
+| Category          | Technology                                                              |
+| ----------------- | ----------------------------------------------------------------------- |
+| Runtime           | [Bun](https://bun.sh)                                                   |
+| Language          | TypeScript (strict)                                                     |
+| Terminal UI       | [React](https://react.dev) + [Ink](https://github.com/vadimdemedes/ink) |
+| CLI Parsing       | [Commander.js](https://github.com/tj/commander.js) (extra-typings)      |
+| Schema Validation | [Zod v4](https://zod.dev)                                               |
+| Code Search       | [ripgrep](https://github.com/BurntSushi/ripgrep)                        |
+| Protocols         | [MCP SDK](https://modelcontextprotocol.io), LSP                         |
+| API               | [Anthropic SDK](https://docs.anthropic.com)                             |
+| Telemetry         | OpenTelemetry + gRPC                                                    |
+| Feature Flags     | GrowthBook                                                              |
+| Auth              | OAuth 2.0, JWT, macOS Keychain                                          |
 
 ---
 
