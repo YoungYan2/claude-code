@@ -90,6 +90,24 @@
 - **FR-004**: System MUST [data requirement, e.g., "persist user preferences"]
 - **FR-005**: System MUST [behavior, e.g., "log all security events"]
 
+### User Experience Consistency Requirements *(mandatory)*
+
+- **UX-001**: Feature MUST preserve established interaction patterns for prompts,
+  errors, confirmations, and progress feedback across relevant interfaces.
+- **UX-002**: Any intentional UX deviation MUST be explicitly specified with
+  rationale, migration notes, and acceptance criteria.
+- **UX-003**: Output formats (human-readable and machine-readable where relevant)
+  MUST remain consistent with existing command/tool expectations.
+
+### Performance Requirements *(mandatory)*
+
+- **PRF-001**: Feature MUST define measurable performance targets relevant to the
+  affected path (e.g., startup, query loop latency, tool execution, render speed).
+- **PRF-002**: Feature MUST define how performance will be measured (benchmark,
+  profiling, load test, or trace-based validation).
+- **PRF-003**: Feature MUST specify acceptable regression limits and remediation
+  actions if limits are exceeded.
+
 *Example of marking unclear requirements:*
 
 - **FR-006**: System MUST authenticate users via [NEEDS CLARIFICATION: auth method not specified - email/password, SSO, OAuth?]
@@ -113,6 +131,9 @@
 - **SC-002**: [Measurable metric, e.g., "System handles 1000 concurrent users without degradation"]
 - **SC-003**: [User satisfaction metric, e.g., "90% of users successfully complete primary task on first attempt"]
 - **SC-004**: [Business metric, e.g., "Reduce support tickets related to [X] by 50%"]
+
+At least one success criterion MUST validate user experience consistency and at
+least one MUST validate performance impact.
 
 ## Assumptions
 

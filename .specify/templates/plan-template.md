@@ -31,7 +31,17 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+- Code Quality Gate: Define how this feature preserves existing architecture,
+  readability, and maintainability. Identify modules touched and justify any
+  cross-boundary coupling.
+- Test Evidence Gate: Define required unit, integration, and contract/e2e tests.
+  Confirm fail-before-pass test workflow or documented exception process.
+- UX Consistency Gate: Describe impact on CLI/REPL/structured output flows,
+  including error messaging, permission prompts, and output formatting.
+- Performance Gate: Define measurable budgets (latency/startup/memory/throughput)
+  and the profiling/benchmark method that will verify no unacceptable regressions.
+- Simplicity and Reversibility Gate: Document simpler alternatives considered,
+  rollback strategy, and observability signals for safe release decisions.
 
 ## Project Structure
 
